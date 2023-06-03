@@ -1,0 +1,166 @@
+/* ==== Variables CSS ====*/
+:root {
+  --header-height: 16rem;
+  /* ==== Colors ====*/
+  /* Change favorite color */
+  --hue-color: 2;
+
+  /* HSL color mode */
+  --first-color: hsl(var(--hue-color), 89%, 68%);
+  --focus-color: hsl(var(--hue-color), 89%, 55%);
+  --text-ligth-color: hsl(var(--hue-color), 100%, 100%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+  /* ==== Font and typography ====*/
+  --body-font: sans-serif;
+
+  /* 1.5rem = 24px ... 0.92rem = 14px */
+  --h1-font-size: 1.5rem;
+  --normal-font-size: 0.938rem;
+
+  /* ==== Font weight ====*/
+  --font-thin: 100;
+  --font-medium: 400;
+  --font-bold: 600;
+
+  /* ==== Position ====*/
+  --position-offset: 10rem;
+}
+
+/*  ==== Reset ====  */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+/*  ==== Header ====  */
+header {
+  width: 100%;
+}
+.image-header {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: var(--header-height);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/*  ==== Body ====  */
+
+.container {
+  position: relative;
+  margin: 4rem;
+  font-family: var(--body-font);
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+
+.contact-info {
+  gap: 2rem;
+  width: 35%;
+  padding: 1rem 2rem;
+}
+
+.contact-details {
+  font-weight: var(--font-thin);
+  font-size: var(--normal-font-size);
+  gap: 1rem;
+}
+
+.contact-title,
+.form-title,
+.btn-send {
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+}
+
+.form-container {
+  gap: 1rem;
+  background-color: var(--container-color);
+  padding: 2rem;
+  width: 65%;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.06),
+    0 -2px 20px 2px rgb(255, 255, 255);
+  position: relative;
+  bottom: var(--position-offset);
+}
+
+.form-description {
+  font-weight: var(--font-thin);
+  line-height: 1.5rem;
+}
+
+.form {
+  gap: 2rem;
+}
+
+.form input {
+  height: 2rem;
+  border: none;
+  border-bottom: 1.4px solid rgb(184, 182, 182);
+}
+
+.btn-send {
+  color: var(--text-ligth-color);
+  background-color: var(--first-color);
+  width: fit-content;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  border: none;
+}
+
+.btn-send:hover,
+.btn-send:focus {
+  background-color: var(--focus-color);
+}
+
+@media (width < 700px) {
+  :root {
+    --position-offset: 6rem;
+  }
+
+  .container {
+    margin: 1rem;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .form-container {
+    /*   position: static; */
+    bottom: var(--position-offset);
+    width: 100%;
+  }
+  .contact-info {
+    margin-top: calc(var(--position-offset) * -1);
+    width: 100%;
+  }
+}
+
+@media (width > 1024px) {
+  .md-width-half {
+    width: calc(50% - 1rem) !important;
+  }
+
+  .container {
+    padding: 0 10rem;
+  }
+}
