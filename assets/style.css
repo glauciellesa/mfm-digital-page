@@ -9,11 +9,7 @@
   --first-color: hsl(var(--hue-color), 89%, 68%);
   --focus-color: hsl(var(--hue-color), 89%, 55%);
   --text-ligth-color: hsl(var(--hue-color), 100%, 100%);
-  --text-color: hsl(var(--hue-color), 8%, 45%);
-  --body-color: hsl(var(--hue-color), 60%, 99%);
   --container-color: #fff;
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
   /* ==== Font and typography ====*/
   --body-font: sans-serif;
@@ -40,17 +36,7 @@
   outline: none;
 }
 
-/*  ==== Header ====  */
-header {
-  width: 100%;
-}
-.image-header {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: var(--header-height);
-}
-
+/* ==== REUSABLE CSS CLASSES ====*/
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -61,6 +47,17 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+/*  ==== Header ====  */
+header {
+  width: 100%;
+}
+.image-header {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: var(--header-height);
 }
 
 /*  ==== Body ====  */
@@ -145,10 +142,10 @@ header {
   }
 
   .form-container {
-    /*   position: static; */
     bottom: var(--position-offset);
     width: 100%;
   }
+
   .contact-info {
     margin-top: calc(var(--position-offset) * -1);
     width: 100%;
